@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+    <!-- Background -->
+    <rect width="800" height="600" fill="#f8f9fa"/>
+    
+    <!-- Title -->
+    <text x="400" y="40" text-anchor="middle" font-size="24" font-weight="bold" fill="#2c3e50">SOLID Principles in API Design</text>
+
+    <!-- S: Single Responsibility -->
+    <g transform="translate(50,100)">
+        <rect width="300" height="80" rx="10" fill="#e74c3c" opacity="0.8"/>
+        <text x="150" y="30" text-anchor="middle" fill="white" font-weight="bold">Single Responsibility</text>
+        <text x="150" y="55" text-anchor="middle" fill="white" font-size="12">
+            <tspan x="150" dy="0">Each endpoint should handle one</tspan>
+            <tspan x="150" dy="15">specific business capability</tspan>
+        </text>
+    </g>
+
+    <!-- O: Open/Closed -->
+    <g transform="translate(450,100)">
+        <rect width="300" height="80" rx="10" fill="#3498db" opacity="0.8"/>
+        <text x="150" y="30" text-anchor="middle" fill="white" font-weight="bold">Open/Closed</text>
+        <text x="150" y="55" text-anchor="middle" fill="white" font-size="12">
+            <tspan x="150" dy="0">Extend API functionality through new</tspan>
+            <tspan x="150" dy="15">endpoints, not modifying existing ones</tspan>
+        </text>
+    </g>
+
+    <!-- L: Liskov Substitution -->
+    <g transform="translate(50,220)">
+        <rect width="300" height="80" rx="10" fill="#2ecc71" opacity="0.8"/>
+        <text x="150" y="30" text-anchor="middle" fill="white" font-weight="bold">Liskov Substitution</text>
+        <text x="150" y="55" text-anchor="middle" fill="white" font-size="12">
+            <tspan x="150" dy="0">API versions should be backward</tspan>
+            <tspan x="150" dy="15">compatible with older versions</tspan>
+        </text>
+    </g>
+
+    <!-- I: Interface Segregation -->
+    <g transform="translate(450,220)">
+        <rect width="300" height="80" rx="10" fill="#9b59b6" opacity="0.8"/>
+        <text x="150" y="30" text-anchor="middle" fill="white" font-weight="bold">Interface Segregation</text>
+        <text x="150" y="55" text-anchor="middle" fill="white" font-size="12">
+            <tspan x="150" dy="0">Clients shouldn't depend on endpoints</tspan>
+            <tspan x="150" dy="15">they don't use</tspan>
+        </text>
+    </g>
+
+    <!-- D: Dependency Inversion -->
+    <g transform="translate(250,340)">
+        <rect width="300" height="80" rx="10" fill="#f1c40f" opacity="0.8"/>
+        <text x="150" y="30" text-anchor="middle" fill="white" font-weight="bold">Dependency Inversion</text>
+        <text x="150" y="55" text-anchor="middle" fill="white" font-size="12">
+            <tspan x="150" dy="0">Depend on abstractions,</tspan>
+            <tspan x="150" dy="15">not concrete implementations</tspan>
+        </text>
+    </g>
+
+    <!-- Examples -->
+    <g transform="translate(50,460)">
+        <text x="0" y="0" font-weight="bold" fill="#2c3e50">Example Applications:</text>
+        <text x="0" y="25" fill="#2c3e50" font-size="12">✓ Separate endpoints for user auth and user profile</text>
+        <text x="0" y="45" fill="#2c3e50" font-size="12">✓ Versioning via /v1/, /v2/ instead of modifying existing endpoints</text>
+        <text x="0" y="65" fill="#2c3e50" font-size="12">✓ Consistent response structures across versions</text>
+        <text x="0" y="85" fill="#2c3e50" font-size="12">✓ Granular endpoints instead of monolithic ones</text>
+        <text x="0" y="105" fill="#2c3e50" font-size="12">✓ Abstract interfaces for different auth providers</text>
+    </g>
+
+    <!-- Connection lines -->
+    <g stroke="#95a5a6" stroke-width="2" fill="none">
+        <path d="M200,180 L200,220"/>
+        <path d="M600,180 L600,220"/>
+        <path d="M200,300 Q400,320 400,340"/>
+        <path d="M600,300 Q400,320 400,340"/>
+    </g>
+</svg>

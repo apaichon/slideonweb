@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>API Design Course Presentation</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/white.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css">
+
+    <style>
+        /* Core layout styles */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #27ae60;
+            --text-color: #333;
+            --bg-color: #fff;
+            --shadow-color: rgba(0, 0, 0, 0.15);
+        }
+
+        /* Base layout */
+        .reveal .slides section {
+            height: 100%;
+            overflow-y: auto;
+            padding: 20px;
+            text-align: left !important;
+        }
+
+        /* Typography */
+        .reveal h1,
+        .reveal h2,
+        .reveal h3 {
+            text-align: left !important;
+            background: linear-gradient(120deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            border-bottom: 2px solid var(--secondary-color);
+            padding: 0.1em 0;
+            transition: transform 0.3s ease;
+        }
+
+        .reveal h1 {
+            font-size: 3em;
+        }
+
+        .reveal h2 {
+            font-size: 2.2em;
+        }
+
+        .reveal h3 {
+            font-size: 1.6em;
+        }
+
+        /* Navigation */
+        .nav-button {
+            background: rgba(0, 0, 0, 0.1);
+            border: none;
+            border-radius: 5px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--text-color);
+            transition: background 0.3s, color 0.3s;
+            position: fixed;
+            z-index: 1000;
+        }
+
+        .nav-button:hover {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        /* Navigation positioning */
+        .nav-prev {
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .nav-next {
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .nav-up {
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-down {
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .scroll-top {
+            bottom: 20px;
+            right: 80px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Page number */
+        .page-number {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 14px;
+            color: var(--text-color);
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+
+        /* Indicators */
+        .chapter-indicator {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 8px 15px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        /* Code blocks */
+        .reveal pre {
+            box-shadow: 0 4px 15px var(--shadow-color);
+            margin: 15px 0;
+            padding: 15px !important;
+            border-radius: 5px;
+        }
+
+        .example-block {
+            background: var(--bg-color);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal .slides section {
+            animation: slideIn 0.3s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Chapter Indicator -->
+    <div class="chapter-indicator">
+        <div class="chapter-title">Chapter: <span id="current-chapter">Introduction</span></div>
+        <div class="subsection-indicator" id="current-subsection"></div>
+    </div>
+
+    <!-- Main Presentation Container -->
+    <div class="reveal">
+        <div class="slides">
+            <!-- Table of Contents -->
+            <section data-chapter="Table of Contents" data-markdown="/markdown/0-api-design-course.md" data-separator="^\n# "
+                data-separator-vertical="^\n## " data-separator-notes="^Note:" data-charset="utf-8">
+            </section>
+            <!-- Chapter 1 -->
+            <!-- Part 1.1 -->
+            <section data-chapter="1.1 API Introduction" data-markdown="/markdown/1.1-api-introduction-detailed.md"
+                data-separator="^\n# " data-separator-vertical="^\n## " data-separator-notes="^Note:"
+                data-charset="utf-8">
+            </section>
+            <!-- Part 1.2 -->
+            <section data-chapter="1.2 API Design" data-markdown="/markdown/1.2-api-design-principles.md" data-separator="^\n# "
+                data-separator-vertical="^\n## " data-separator-notes="^Note:" data-charset="utf-8">
+            </section>
+            <!-- Part 1.3 -->
+            <section data-chapter="1.3 API Planning" data-markdown="/markdown/1.3-api-planning-strategy.md" data-separator="^\n# "
+                data-separator-vertical="^\n## " data-separator-notes="^Note:" data-charset="utf-8">
+            </section>
+
+            <!-- Chapter 2 -->
+            <section data-chapter="2.1 Resource Modeling" data-markdown="/markdown/2.1-resource-modeling.md"
+                data-separator="^\n# " data-separator-vertical="^\n## " data-separator-notes="^Note:"
+                data-charset="utf-8">
+
+            </section>
+            <section data-chapter="2.2 Url Design" data-markdown="/markdown/2.2-url-design.md" data-separator="^\n# "
+                data-separator-vertical="^\n## " data-separator-notes="^Note:" data-charset="utf-8">
+
+            </section>
+            <section data-chapter="2.3 Http Methods and Status Codes" data-markdown="/markdown/2.3-http-methods-status.md"
+                data-separator="^\n#  " data-separator-vertical="^\n## " data-separator-notes="^Note:"
+                data-charset="utf-8">
+
+            </section>
+
+            <!-- Chapter 3 -->
+            <section data-chapter="3.1 Data Formats" data-markdown="/markdown/3.1-data-formats.md" data-separator="^\n# "
+                data-separator-vertical="^\n## " data-separator-notes="^Note:" data-charset="utf-8">
+
+            </section>
+            <section data-chapter="3.2 Query Parameters" data-markdown="/markdown/3.2-query-parameters.md" data-separator="^\n# "
+                data-separator-vertical="^\n## " data-separator-notes="^Note:" data-charset="utf-8">
+
+            </section>
+            <section data-chapter="3.3 Error Handling" data-markdown="/markdown/3.3-error-handling.md" data-separator="^\n#  "
+                data-separator-vertical="^\n## " data-separator-notes="^Note:" data-charset="utf-8">
+
+            </section>
+            <!-- Chapter 4 -->
+            <section data-chapter="4.1 Api Security" data-markdown="/markdown/4.1-api-security-module.md" data-separator="^\n# "
+                data-separator-vertical="^\n## " data-separator-notes="^Note:" data-charset="utf-8">
+
+            </section>
+            <section data-chapter="4.2 Api Security Best Practical" data-markdown="/markdown/4.2-api-security-best-practices.md"
+                data-separator="^\n# " data-separator-vertical="^\n## " data-separator-notes="^Note:"
+                data-charset="utf-8">
+
+            </section>
+            <section data-chapter="4.3 Api Performance optimization" data-markdown="/markdown/4.3-api-performance-optimization.md"
+                data-separator="^\n#  " data-separator-vertical="^\n## " data-separator-notes="^Note:"
+                data-charset="utf-8">
+
+            </section>
+            <!-- Additional sections would follow the same pattern -->
+        </div>
+    </div>
+
+    <!-- Page Number -->
+    <div class="page-number"></div>
+
+    <!-- Navigation Controls -->
+    <div class="navigation-controls">
+        <button class="nav-button nav-prev" onclick="presentation.navigate('left')" title="Previous Chapter">←</button>
+        <button class="nav-button nav-next" onclick="presentation.navigate('right')" title="Next Chapter">→</button>
+    </div>
+    <button class="nav-button nav-up" onclick="presentation.navigate('up')" title="Previous Section">↑</button>
+    <button class="nav-button nav-down" onclick="presentation.navigate('down')" title="Next Section">↓</button>
+    <button class="nav-button scroll-top" onclick="scrollToTop()" title="Scroll to Top">⇑</button>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+    <script>
+        // Presentation Configuration
+        const presentationConfig = {
+            plugins: [RevealMarkdown],
+            transition: 'slide',
+            center: true,
+            overview: true,
+            keyboard: true,
+            touch: true,
+            progress: true,
+            slideNumber: false,
+            markdown: {
+                separator: '\n# ',
+                verticalSeparator: '\n## ',
+                highlight: (code, language) => {
+                    return language ?
+                        hljs.highlight(code, { language }).value :
+                        hljs.highlightAuto(code).value;
+                }
+            }
+        };
+
+        // Core functionality
+        class PresentationManager {
+            constructor(config) {
+                this.deck = new Reveal(config);
+                this.initialize();
+                this.setupEventListeners();
+            }
+
+            async initialize() {
+                await this.deck.initialize();
+                this.updateAll();
+            }
+
+            setupEventListeners() {
+                this.deck.addEventListener('slidechanged', () => this.updateAll());
+                document.addEventListener('scroll', this.handleScroll.bind(this), true);
+            }
+
+            updateAll() {
+                this.updateChapterIndicator();
+                this.updatePageNumber();
+                this.updateNavigationVisibility();
+                this.highlightCode();
+                this.processTextBlocks();
+                this.scrollToTop(); // Reset scroll position on slide change
+            }
+
+            updateChapterIndicator() {
+                const indices = this.deck.getIndices();
+                const currentSection = document.querySelector('.reveal .slides').children[indices.h];
+                const chapterTitle = currentSection?.getAttribute('data-chapter') || `Chapter ${indices.h + 1}`;
+
+                document.getElementById('current-chapter').textContent = chapterTitle;
+
+                const subsections = currentSection?.querySelectorAll('section');
+                const subsectionElement = document.getElementById('current-subsection');
+                if (subsections?.length > 1 && indices.v > 0) {
+                    subsectionElement.textContent = subsections[indices.v].getAttribute('data-title') ||
+                        `Section ${indices.v}`;
+                } else {
+                    subsectionElement.textContent = '';
+                }
+            }
+
+            updatePageNumber() {
+                const indices = this.deck.getIndices();
+                let currentPage = 1;
+                let totalPages = 0;
+
+                const sections = document.querySelectorAll('.reveal .slides > section');
+
+                // Calculate total pages
+                sections.forEach(section => {
+                    const verticalSlides = section.querySelectorAll('section');
+                    totalPages += verticalSlides.length || 1;
+                });
+
+                // Calculate current page
+                for (let h = 0; h < indices.h; h++) {
+                    const section = sections[h];
+                    const verticalSlides = section.querySelectorAll('section');
+                    currentPage += verticalSlides.length || 1;
+                }
+
+                // Add current vertical slide position
+                if (indices.v > 0) {
+                    currentPage += indices.v;
+                }
+
+                document.querySelector('.page-number').textContent = `Page ${currentPage} of ${totalPages}`;
+            }
+
+            updateNavigationVisibility() {
+                const indices = this.deck.getIndices();
+                const currentSection = document.querySelector('.reveal .slides').children[indices.h];
+                const upButton = document.querySelector('.nav-up');
+                const downButton = document.querySelector('.nav-down');
+
+                if (currentSection) {
+                    const verticalSlides = currentSection.querySelectorAll('section');
+                    const hasVerticalSlides = verticalSlides.length > 1;
+
+                    upButton.style.display = hasVerticalSlides && indices.v > 0 ? 'flex' : 'none';
+                    downButton.style.display = hasVerticalSlides && indices.v < verticalSlides.length - 1 ? 'flex' : 'none';
+                }
+            }
+
+            processTextBlocks() {
+                document.querySelectorAll('code.language-text').forEach(code => {
+                    if (code.textContent.includes('Examples:')) {
+                        code.parentElement.classList.add('example-block');
+                        code.innerHTML = code.textContent
+                            .split('\n')
+                            .map(line => line.trim().startsWith('-') ?
+                                `<span class="list-item">${line.trim().substring(1).trim()}</span>` :
+                                line)
+                            .join('\n');
+                    }
+                });
+            }
+
+            highlightCode() {
+                document.querySelectorAll('pre code').forEach(block => {
+                    hljs.highlightBlock(block);
+                });
+            }
+
+            handleScroll(event) {
+                const currentSlide = document.querySelector('.reveal .slides section.present');
+                const scrollTopButton = document.querySelector('.scroll-top');
+
+                if (currentSlide && scrollTopButton) {
+                    scrollTopButton.classList.toggle('visible', currentSlide.scrollTop > 100);
+                }
+            }
+
+            scrollToTop() {
+                const currentSlide = document.querySelector('.reveal .slides section.present');
+                if (currentSlide) {
+                    currentSlide.scrollTop = 0;
+                }
+            }
+
+            navigate(direction) {
+                switch (direction) {
+                    case 'left':
+                        this.deck.left();
+                        break;
+                    case 'right':
+                        this.deck.right();
+                        break;
+                    case 'up':
+                        this.deck.up();
+                        break;
+                    case 'down':
+                        this.deck.down();
+                        break;
+                }
+            }
+        }
+
+        // Initialize presentation
+        const presentation = new PresentationManager(presentationConfig);
+
+        // Navigation functions
+        function scrollToTop() {
+            const currentSlide = document.querySelector('.reveal .slides section.present');
+            if (currentSlide) {
+                currentSlide.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>

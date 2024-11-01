@@ -1,0 +1,115 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>API Design Course Presentation</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/white.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Chapter Indicator -->
+    <div class="chapter-indicator">
+        <div class="chapter-title">Chapter: <span id="current-chapter">Introduction</span></div>
+        <div class="subsection-indicator" id="current-subsection"></div>
+    </div>
+
+    <!-- Main Presentation Container -->
+    <div class="reveal">
+        <div class="slides">
+            <!-- Table of Contents -->
+            <section data-chapter="Table of Contents" data-markdown="/markdown/0-api-design-course.md" data-separator="^\n# "
+                data-separator-vertical="^\n## " data-separator-notes="^Note:" data-charset="utf-8">
+            </section>
+            <!-- Chapter 1 -->
+            <!-- Part 1.1 -->
+            <section data-chapter="1.1 API Introduction" data-markdown="/markdown/1.1-api-introduction-detailed.md"
+                data-separator="^\n# " data-separator-vertical="^\n## " data-separator-notes="^Note:"
+                data-charset="utf-8">
+            </section>
+            <!-- Part 1.2 -->
+            <section data-chapter="1.2 API Design" data-markdown="/markdown/1.2-api-design-principles.md" data-separator="^\n# "
+                data-separator-vertical="^\n## " data-separator-notes="^Note:" data-charset="utf-8">
+            </section>
+            <!-- Part 1.3 -->
+            <section data-chapter="1.3 API Planning" data-markdown="/markdown/1.3-api-planning-strategy.md" data-separator="^\n# "
+                data-separator-vertical="^\n## " data-separator-notes="^Note:" data-charset="utf-8">
+            </section>
+
+            <!-- Chapter 2 -->
+            <section data-chapter="2.1 Resource Modeling" data-markdown="/markdown/2.1-resource-modeling.md"
+                data-separator="^\n# " data-separator-vertical="^\n## " data-separator-notes="^Note:"
+                data-charset="utf-8">
+
+            </section>
+            <section data-chapter="2.2 Url Design" data-markdown="/markdown/2.2-url-design.md" data-separator="^\n# "
+                data-separator-vertical="^\n## " data-separator-notes="^Note:" data-charset="utf-8">
+
+            </section>
+            <section data-chapter="2.3 Http Methods and Status Codes" data-markdown="/markdown/2.3-http-methods-status.md"
+                data-separator="^\n#  " data-separator-vertical="^\n## " data-separator-notes="^Note:"
+                data-charset="utf-8">
+
+            </section>
+
+            <!-- Chapter 3 -->
+            <section data-chapter="3.1 Data Formats" data-markdown="/markdown/3.1-data-formats.md" data-separator="^\n# "
+                data-separator-vertical="^\n## " data-separator-notes="^Note:" data-charset="utf-8">
+
+            </section>
+            <section data-chapter="3.2 Query Parameters" data-markdown="/markdown/3.2-query-parameters.md" data-separator="^\n# "
+                data-separator-vertical="^\n## " data-separator-notes="^Note:" data-charset="utf-8">
+
+            </section>
+            <section data-chapter="3.3 Error Handling" data-markdown="/markdown/3.3-error-handling.md" data-separator="^\n#  "
+                data-separator-vertical="^\n## " data-separator-notes="^Note:" data-charset="utf-8">
+
+            </section>
+            <!-- Chapter 4 -->
+            <section data-chapter="4.1 Api Security" data-markdown="/markdown/4.1-api-security-module.md" data-separator="^\n# "
+                data-separator-vertical="^\n## " data-separator-notes="^Note:" data-charset="utf-8">
+
+            </section>
+            <section data-chapter="4.2 Api Security Best Practical" data-markdown="/markdown/4.2-api-security-best-practices.md"
+                data-separator="^\n# " data-separator-vertical="^\n## " data-separator-notes="^Note:"
+                data-charset="utf-8">
+
+            </section>
+            <section data-chapter="4.3 Api Performance optimization" data-markdown="/markdown/4.3-api-performance-optimization.md"
+                data-separator="^\n#  " data-separator-vertical="^\n## " data-separator-notes="^Note:"
+                data-charset="utf-8">
+
+            </section>
+            <!-- Other sections remain the same but with updated markdown paths -->
+        </div>
+    </div>
+
+    <!-- Page Number -->
+    <div class="page-number"></div>
+
+    <!-- Navigation Controls -->
+    <div class="navigation-controls">
+        <button class="nav-button nav-prev" onclick="presentation.navigate('left')" title="Previous Chapter">←</button>
+        <button class="nav-button nav-next" onclick="presentation.navigate('right')" title="Next Chapter">→</button>
+    </div>
+    <button class="nav-button nav-up" onclick="presentation.navigate('up')" title="Previous Section">↑</button>
+    <button class="nav-button nav-down" onclick="presentation.navigate('down')" title="Next Section">↓</button>
+    <button class="nav-button scroll-top" onclick="scrollToTop()" title="Scroll to Top">⇑</button>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="/js/config.js"></script>
+    <script src="/js/PresentationManager.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
